@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Housinglocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
 @Component({
@@ -7,6 +7,13 @@ import { HousingService } from '../housing.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  title = signal('');
+
+  changeTitle(event: Event) {
+    const title = (event.target as HTMLInputElement).value;
+    this.filterResults(title);
+  }
+
   filterResults(text: string) {
     if (!text) {
       this.filteredLocationList = this.housingLocationList;

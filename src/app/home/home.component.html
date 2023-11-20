@@ -1,6 +1,7 @@
 <section>
   <form>
     <input type="text" placeholder="Filter by city" #filter />
+    <input type="text" [value]="title()" (keyup)="changeTitle($event)" placeholder="Filter city when typing" />
     <app-button-outline title="Search" (click)="filterResults(filter.value)"></app-button-outline>
   </form>
 </section>
