@@ -1,0 +1,13 @@
+<section>
+  <form>
+    <input type="text" placeholder="Filter by city" #filter />
+    <app-button-outline title="Search" (click)="filterResults(filter.value)"></app-button-outline>
+  </form>
+</section>
+<section class="results">
+  <app-housing-location *ngFor="let housingLocation of filteredLocationList"
+    [housingLocation]="housingLocation"></app-housing-location>
+</section>
+<section>
+  <app-button-outline routerLink='/contacts' title="Contact" class="contact-btn"></app-button-outline>
+</section>

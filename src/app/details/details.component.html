@@ -1,0 +1,71 @@
+<article>
+  <img
+    class="listing-photo"
+    [src]="housingLocation?.photo"
+    alt="Exterior photo of {{ housingLocation?.name }}"
+  />
+  <section class="listing-description">
+    <h2 class="listing-heading">{{ housingLocation?.name }}</h2>
+    <p class="listing-location">
+      {{ housingLocation?.city }}, {{ housingLocation?.state }}
+    </p>
+  </section>
+  <section class="listing-features">
+    <h2 class="section-heading">About this housing location</h2>
+    <ul>
+      <li>Units available: {{ housingLocation?.availableUnits }}</li>
+      <li *ngIf = "housingLocation?.wifi ; else elseBlock">Does this location have wifi: Yes </li>
+      <ng-template #elseBlock>Does this location have wifi : No </ng-template>
+      <li *ngIf = "housingLocation?.laundry ; else laundryElseBlock">Does this location have laundry: Yes </li>
+      <ng-template #laundryElseBlock>Does this location have wifi: No </ng-template>
+    </ul>
+  </section>
+  <section class="listing-apply">
+    <h2 class="section-heading">Apply now to live here</h2>
+    <form [formGroup]="applyForm" (submit)="submitApplication()">
+      <!-- <label for="first-name">First Name</label>
+      <input id="first-name" type="text" formControlName="firstName" /> -->
+
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input
+          id="first-name"
+          type="text"
+          class="form-control"
+          placeholder="firstname"
+          aria-label="Firstname"
+          aria-describedby="addon-wrapping"
+          formControlName="firstName"
+        />
+      </div>
+
+      <div class="input-group flex-nowrap">
+      <span class="input-group-text" id="addon-wrapping">@</span>
+        <input
+          id="last-name"
+          type="text"
+          class="form-control"
+          placeholder="lastname"
+          aria-label="Lastname"
+          aria-describedby="addon-wrapping"
+          formControlName="lastName"
+        />
+      </div>
+
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">@</span>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          placeholder="email"
+          aria-label="Email"
+          aria-describedby="addon-wrapping"
+          formControlName="email"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Apply now</button>
+    </form>
+  </section>
+</article>
