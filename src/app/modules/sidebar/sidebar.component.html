@@ -1,0 +1,49 @@
+<div class="d-flex flex-column">
+  <div class="title" id="title">
+    <button class="btn d-md-none close-btn px-1 py-0 text-white" (click)="toggle_side()">
+      <i class="fas fa-bars" id="open_close_btn"></i>
+    </button>
+    Responsive Side Navigation
+  </div>
+  <div class="main-container d-flex ">
+    <div class="sidebar " id="side_nav">
+      <div class="header-box px-2 pt-3 pb-4"></div>
+
+      <img class="avatar"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/TechCrunch_Disrupt_2019_%2848834434641%29_%28cropped%29.jpg/200px-TechCrunch_Disrupt_2019_%2848834434641%29_%28cropped%29.jpg" />
+
+      <h4 class="name">Will Smith</h4>
+      <p class="designation">Actor</p>
+      <hr class="h-color mx-3" />
+      <ul class="list-unstyled px-2">
+        <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" id="ripple">
+          <a class="text-decoration-none px-3 py-2 d-block">
+            <i class="fas fa-home" id="icon"></i>Home
+          </a>
+        </li>
+        <li class="" routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          id="ripple">
+          <a class="text-decoration-none px-3 py-2 d-block">
+            <i class="fas fa-user" id="icon"></i> Profile</a>
+        </li>
+        <li class="" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          id="ripple">
+          <a class="text-decoration-none px-3 py-2 d-block">
+            <i class="fas fa-info-circle" id="icon"></i> About</a>
+        </li>
+      </ul>
+
+      <hr class="h-color mx-3" />
+      <ul class="list-unstyled px-2">
+        <li class="" routerLink="/help" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          id="ripple">
+          <a class="text-decoration-none px-3 py-2 d-block">
+            <i class="fas fa-question" id="icon"></i> Help</a>
+        </li>
+      </ul>
+    </div>
+    <div class="content p-3" id="content" (click)="closeSide()">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

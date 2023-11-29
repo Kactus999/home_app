@@ -1,0 +1,143 @@
+#side_nav {
+  background: #004a9f;
+  /* min-width: 250px; */
+  /* max-width: 250px; */
+  width: 250px;
+  height: 88vh;
+  margin-left: 2vh;
+  border-radius: 20px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  -moz-box-shadow: 0 0 2px 2px #808080;
+  -webkit-box-shadow: 0 0 2px 2px #808080;
+  box-shadow: 0 0 2px 2px #808080;
+}
+
+.content {
+  /* min-height: 100vh; */
+  height: 88vh;
+  width: 100%;
+  -moz-box-shadow: 0 0 2px 2px #808080;
+  -webkit-box-shadow: 0 0 2px 2px #808080;
+  box-shadow: 0 0 2px 2px #808080;
+  margin: 1%;
+  border-radius: 20px;
+  padding: 5px;
+  overflow: auto;
+}
+
+hr.h-color {
+  border-top: 2px solid;
+  color: white;
+}
+.sidebar li {
+  margin-bottom: 4px;
+}
+.sidebar li.active {
+  background: #eee;
+  border-radius: 8px;
+}
+
+.sidebar li.active a,
+.sidebar li.active a:hover {
+  color: #000;
+}
+
+.sidebar li a {
+  color: #fff;
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  #side_nav {
+    margin-left: -350px;
+    position: absolute;
+    /* min-height: 100vh; */
+    z-index: 10;
+  }
+
+  #side_nav.active {
+    margin-left: 15px;
+    height: 88vh;
+  }
+
+  .content {
+    margin: 2vh;
+    overflow: auto;
+    height: 86vh;
+  }
+}
+
+.title {
+  background: #004a9f;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.name {
+  display: block;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: normal;
+  color: white;
+  text-align: center;
+}
+
+.designation {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: white;
+  text-align: center;
+
+}
+
+li.active {
+  border-radius: 20px;
+  color: beige;
+}
+
+.dim {
+  box-shadow: 0 0 0 1000000px rgba(0, 0, 0, 0.3);
+}
+
+#icon {
+  margin-right: 5px;
+}
+
+.close-btn {
+  font-size: 20px;
+}
+
+#ripple {
+  background-position: center;
+  transition: background 0.8s;
+  border-radius: 8px;
+}
+
+#ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  border-radius: 8px;
+}
+
+#ripple:active{
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+
