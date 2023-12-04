@@ -8,6 +8,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { AboutComponent } from './modules/about/about.component';
 import { HelpPageComponent } from './modules/help-page/help-page.component';
+import { ChangePasswordComponent } from './modules/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HelpPageComponent } from './modules/help-page/help-page.component';
     ProfileComponent,
     AboutComponent,
     HelpPageComponent,
+    ChangePasswordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
