@@ -1,0 +1,28 @@
+.card {
+  /* border: 1px solid #125266; */
+  width: 85vh;
+  padding: 3vh;
+}
+
+.logo {
+  width: 50px;
+  height: 50p;
+  border-radius: 49%;
+
+  /* vertical-align: middle; */
+}
+
+#login-btn {
+  background-color: #46b2c3;
+  color: #eee;
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 40vh;
+  }
+}
+
+.is-invalid {
+  border-color: red;
+}
