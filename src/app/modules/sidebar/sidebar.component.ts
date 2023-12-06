@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -8,7 +9,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 export class SidebarComponent implements OnInit {
   ngOnInit(): void { }
 
-  constructor(private breakPointObserver: BreakpointObserver) {
+  constructor(private breakPointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {
     this.breakPointObserver
       .observe(['(max-width : 768px)'])
       .subscribe((result: BreakpointState) => {
@@ -75,5 +76,9 @@ export class SidebarComponent implements OnInit {
       content?.classList.remove('dim');
       title?.classList.remove('dim');
     }
+  }
+
+  help() {
+    this.router.navigate(['help'], { relativeTo: this.route });
   }
 }
