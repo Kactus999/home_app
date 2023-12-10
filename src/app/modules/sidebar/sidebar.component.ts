@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../../_models';
+import { AccountService } from '../../_services';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
-  ngOnInit(): void { }
+  user: User | null;
+  ngOnInit(): void {}
 
-  constructor(private breakPointObserver: BreakpointObserver, private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private breakPointObserver: BreakpointObserver,
+    private route: ActivatedRoute,
+    private router: Router,
+    private accountService: AccountService
+  ) {
+    this.user = this.accountService.userValue;
     this.breakPointObserver
       .observe(['(max-width : 768px)'])
       .subscribe((result: BreakpointState) => {

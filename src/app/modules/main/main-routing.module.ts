@@ -9,7 +9,7 @@ import { MainComponent } from './main.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'a',
     component: MainComponent,
     title: 'main',
     children: [
@@ -30,5 +30,10 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MainRoutingModule { }
-export const ArrayOfComponents = [HomeComponent, ProfileComponent, AboutComponent, HelpPageComponent]
+export class MainRoutingModule {}
+export const ArrayOfComponents = [
+  HomeComponent,
+  ProfileComponent,
+  AboutComponent,
+  HelpPageComponent,
+];
