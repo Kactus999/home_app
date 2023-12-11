@@ -7,14 +7,20 @@ import { AboutComponent } from '../about/about.component';
 import { ChangePasswordComponent } from '../change-password/change-password.component';
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
+import { HelpPageComponent } from '../help-page/help-page.component';
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    // HomeComponent,
+    // ProfileComponent,
+    // AboutComponent,
+    // ChangePasswordComponent,
+    // SidebarComponent,
     ProfileComponent,
     AboutComponent,
+    HomeComponent,
     ChangePasswordComponent,
-    // SidebarComponent,
+    HelpPageComponent,
   ],
   imports: [MainRoutingModule],
   providers: [],

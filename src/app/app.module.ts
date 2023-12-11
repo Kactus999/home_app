@@ -13,9 +13,6 @@ import { AlertComponent } from './_components';
 import { HomeComponent } from './home';
 import { MainComponent } from './modules/main/main.component';
 import { SidebarComponent } from './modules/sidebar/sidebar.component';
-import { HelpPageComponent } from './modules/help-page/help-page.component';
-import { AboutComponent } from './modules/about/about.component';
-import { ProfileComponent } from './modules/profile/profile.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,9 +26,6 @@ import { ProfileComponent } from './modules/profile/profile.component';
     HomeComponent,
     MainComponent,
     SidebarComponent,
-    HelpPageComponent,
-    ProfileComponent,
-    AboutComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

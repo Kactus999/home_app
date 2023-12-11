@@ -46,6 +46,19 @@
                 <i class="fas fa-info-circle" id="icon"></i> Change password</a
               >
             </li>
+            <li
+              class=""
+              routerLink="/change-password"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                class="text-decoration-none px-3 py-2 d-block"
+                (click)="logout()"
+              >
+                <i class="fas fa-info-circle" id="icon"></i> Logout</a
+              >
+            </li>
           </div>
         </ul>
       </div>

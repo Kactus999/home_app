@@ -90,4 +90,7 @@ export class SidebarComponent implements OnInit {
   help() {
     this.router.navigate(['help'], { relativeTo: this.route });
   }
+  logout() {
+    this.accountService.logout();
+  }
 }
