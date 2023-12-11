@@ -29,9 +29,14 @@
   </div>
 </div> -->
 <!-- <alert></alert> -->
+<div
+  class="position-absolute top-0 start-0"
+  style="width: 100%; height: 100%; background-color: white"
+></div>
+
 <div class="login-form">
   <div
-    class="card border-0 d-flex flex-colum position-absolute start-50 translate-middle-x mt-5"
+    class="card border-0 d-flex flex-colum position-absolute top-0 start-50 translate-middle-x mt-5"
   >
     <div class="d-flex justify-content-center mt-4">
       <img
@@ -50,6 +55,9 @@
           >Create Account</a
         >
       </p>
+    </div>
+    <div>
+      <alert></alert>
     </div>
     <form class="user-login" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="row py-3">

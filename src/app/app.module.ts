@@ -22,7 +22,7 @@ import { SidebarComponent } from './modules/sidebar/sidebar.component';
   ],
   declarations: [
     AppComponent,
-    AlertComponent,
+    // AlertComponent,
     HomeComponent,
     MainComponent,
     SidebarComponent,
