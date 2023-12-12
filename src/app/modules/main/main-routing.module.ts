@@ -6,21 +6,43 @@ import { HelpPageComponent } from '../help-page/help-page.component';
 import { ChangePasswordComponent } from '../change-password/change-password.component';
 import { HomeComponent } from '../home/home.component';
 import { MainComponent } from './main.component';
+import { AuthGuard } from '@app/_helpers';
 
 const routes: Routes = [
   {
-    path: 'a',
+    path: '',
     component: MainComponent,
     title: 'main',
     children: [
-      { path: '', component: HomeComponent, title: 'Home' },
-      { path: 'profile', component: ProfileComponent, title: 'Profile' },
-      { path: 'about', component: AboutComponent, title: 'About' },
-      { path: 'help', component: HelpPageComponent, title: 'Help' },
+      {
+        path: '',
+        component: HomeComponent,
+        title: 'Home',
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        title: 'Profile',
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        title: 'About',
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'help',
+        component: HelpPageComponent,
+        title: 'Help',
+        canActivate: [AuthGuard],
+      },
       {
         path: 'change-password',
         component: ChangePasswordComponent,
         title: 'Change Password',
+        canActivate: [AuthGuard],
       },
     ],
   },
