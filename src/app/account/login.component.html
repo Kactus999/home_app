@@ -1,0 +1,124 @@
+<!-- <div class="card">
+  <h4 class="card-header">Login</h4>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" formControlName="username" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+        <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+          <div *ngIf="f['username'].errors['required']">Username is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">Password is required</div>
+        </div>
+      </div>
+      <div>
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+          Login
+        </button>
+        <a routerLink="../register" class="btn btn-link">Register</a>
+      </div>
+    </form>
+  </div>
+</div> -->
+<!-- <alert></alert> -->
+<div
+  class="position-absolute top-0 start-0"
+  style="width: 100%; height: 100%; background-color: white"
+></div>
+
+<div class="login-form">
+  <div
+    class="card border-0 d-flex flex-colum position-absolute top-0 start-50 translate-middle-x mt-5"
+  >
+    <div class="d-flex justify-content-center mt-4">
+      <img
+        class="logo"
+        src="https://lh3.googleusercontent.com/3bXLbllNTRoiTCBdkybd1YzqVWWDRrRwJNkVRZ3mcf7rlydWfR13qJlCSxJRO8kPe304nw1jQ_B0niDo56gPgoGx6x_ZOjtVOK6UGIr3kshpmTq46pvFObfJ2K0wzoqk36MWWSnh0y9PzgE7PVSRz6Y"
+        alt=""
+      />
+    </div>
+    <div class="d-flex flex-row mb-1 mt-4">
+      <h2 class="flex-fill">Login</h2>
+      <p class="mt-2">
+        Or
+        <a
+          routerLink="../register"
+          class="link-offset-2 link-underline link-underline-opacity-0"
+          >Create Account</a
+        >
+      </p>
+    </div>
+    <div>
+      <alert></alert>
+    </div>
+    <form class="user-login" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row py-3">
+        <div class="col-md-12 roundedTextBox mb-3">
+          <label class="mb-2 font-weight-italic">Username</label>
+          <input
+            type="username"
+            class="form-control"
+            id="inputEmail"
+            formControlName="username"
+            placeholder="username"
+            [ngClass]="{
+              'is-invalid': submitted && f['username'].errors
+            }"
+          />
+        </div>
+        <div *ngIf="submitted && f['username'].errors" class="text-danger mb-2">
+          <div *ngIf="f['username'].errors['required']">Email is required.</div>
+        </div>
+        <div class="col-md-12 roundedTextBox mb-1">
+          <div class="d-flex flex-row mb-2">
+            <label class="flex-fill">Password</label>
+            <a
+              href="#"
+              class="link-offset-2 link-underline link-underline-opacity-0"
+              >Forgot password ?</a
+            >
+          </div>
+          <input
+            type="password"
+            class="form-control mb-2"
+            id="inputPassword"
+            formControlName="password"
+            placeholder="Password"
+            [ngClass]="{
+              'is-invalid': submitted && f['password'].errors
+            }"
+          />
+        </div>
+        <div *ngIf="submitted && f['password'].errors" class="text-danger">
+          <div *ngIf="f['password'].errors['required']">
+            Password is required.
+          </div>
+          <div *ngIf="f['password'].errors['pattern']">
+            <!-- <h3>Password must contain the following:</h3> -->
+            <ul>
+              <li>Password should be alphanumeric</li>
+              <li>A letter of the password should be capital</li>
+              <li>
+                Password must contain a special character (@, $, !, &, etc)
+              </li>
+              <li>Password length must be greater than 7 characters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- <alert></alert> -->
+      <div class="buttons text-center">
+        <button class="btn w-100" id="login-btn" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
