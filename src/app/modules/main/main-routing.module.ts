@@ -44,6 +44,13 @@ const routes: Routes = [
         title: 'Change Password',
         canActivate: [AuthGuard],
       },
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('../../users/users.module').then((m) => m.UsersModule),
+        canActivate: [AuthGuard],
+        title: 'Users',
+      },
     ],
   },
 ];
@@ -53,9 +60,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class MainRoutingModule {}
-export const ArrayOfComponents = [
-  HomeComponent,
-  ProfileComponent,
-  AboutComponent,
-  HelpPageComponent,
-];
