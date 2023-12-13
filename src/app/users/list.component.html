@@ -1,31 +1,56 @@
 ﻿<h1>Users</h1>
-<a routerLink="add" class="btn btn-sm btn-success mb-2">Add User</a>
+<div class="row g-3 align-item-center">
+  <div class="col-auto">
+    <a routerLink="add" class="btn btn-sm btn-success col-auto">Add User</a>
+  </div>
+  <div class="col-auto ms-auto">
+    <div class="input-group">
+      <span class="input-group-text"
+        ><i class="fas fa-search-dollar" id="icon"></i>
+      </span>
+      <input
+        (keyup)="filterResults($event)"
+        class="form-control form-control-sm"
+        placeholder="Search user by first name"
+      />
+    </div>
+  </div>
+</div>
 <table class="table table-striped">
-    <thead>
-        <tr>
-            <th style="width: 30%">First Name</th>
-            <th style="width: 30%">Last Name</th>
-            <th style="width: 30%">Username</th>
-            <th style="width: 10%"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users">
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.username}}</td>
-            <td style="white-space: nowrap">
-                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary me-1">Edit</a>
-                <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
-                    <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
-                    <span *ngIf="!user.isDeleting">Delete</span>
-                </button>
-            </td>
-        </tr>
-        <tr *ngIf="!users">
-            <td colspan="4" class="text-center">
-                <span class="spinner-border spinner-border-lg align-center"></span>
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th style="width: 30%">First Name</th>
+      <th style="width: 30%">Last Name</th>
+      <th style="width: 30%">Username</th>
+      <th style="width: 10%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.username }}</td>
+      <td style="white-space: nowrap">
+        <a routerLink="edit/{{ user.id }}" class="btn btn-sm btn-primary me-1"
+          >Edit</a
+        >
+        <button
+          (click)="deleteUser(user.id)"
+          class="btn btn-sm btn-danger btn-delete-user"
+          [disabled]="user.isDeleting"
+        >
+          <span
+            *ngIf="user.isDeleting"
+            class="spinner-border spinner-border-sm"
+          ></span>
+          <span *ngIf="!user.isDeleting">Delete</span>
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="!users">
+      <td colspan="4" class="text-center">
+        <span class="spinner-border spinner-border-lg align-center"></span>
+      </td>
+    </tr>
+  </tbody>
 </table>

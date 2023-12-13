@@ -1,34 +1,3 @@
-<!-- <div class="card">
-  <h4 class="card-header">Login</h4>
-  <div class="card-body">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-        <label class="form-label">Username</label>
-        <input type="text" formControlName="username" class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
-        <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-          <div *ngIf="f['username'].errors['required']">Username is required</div>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" formControlName="password" class="form-control"
-          [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
-        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-          <div *ngIf="f['password'].errors['required']">Password is required</div>
-        </div>
-      </div>
-      <div>
-        <button [disabled]="loading" class="btn btn-primary">
-          <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-          Login
-        </button>
-        <a routerLink="../register" class="btn btn-link">Register</a>
-      </div>
-    </form>
-  </div>
-</div> -->
-<!-- <alert></alert> -->
 <div
   class="position-absolute top-0 start-0"
   style="width: 100%; height: 100%; background-color: white"
@@ -56,9 +25,6 @@
         >
       </p>
     </div>
-    <!-- <div>
-      <alert></alert>
-    </div> -->
     <p class="text-danger" *ngIf="wrongPassword">
       Username or password is wrong
     </p>
