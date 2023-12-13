@@ -1,19 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from '@app/_services';
+import { AccountService, AlertService } from '../../../common/_services';
 
-@Component({
-  templateUrl: 'login.component.html',
-  styleUrls: ['login.component.css'],
-})
-export class LoginComponent implements OnInit {
+@Component({ templateUrl: 'register.component.html' })
+export class RegisterComponent implements OnInit {
   form!: FormGroup;
   loading = false;
   submitted = false;
-  wrongPassword = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,8 +21,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       username: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -48,18 +46,17 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
     this.accountService
-      .login(this.f['username'].value, this.f['password'].value)
+      .register(this.form.value)
       .pipe(first())
       .subscribe({
         next: () => {
-          // get return url from query parameters or default to home page
-          this.wrongPassword = false;
-          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-          this.router.navigateByUrl(returnUrl);
+          this.alertService.success('Registration successful', {
+            keepAfterRouteChange: true,
+          });
+          this.router.navigate(['../login'], { relativeTo: this.route });
         },
         error: (error) => {
-          this.wrongPassword = true;
-          // this.alertService.error(error);
+          this.alertService.error(error);
           this.loading = false;
         },
       });

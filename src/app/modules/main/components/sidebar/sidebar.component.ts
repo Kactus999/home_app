@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../../_models';
-import { AccountService } from '../../_services';
+import { User } from '../../../../common/_models';
+import { AccountService } from '../../../../common/_services';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

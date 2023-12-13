@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from '../profile/profile.component';
-import { AboutComponent } from '../about/about.component';
-import { HelpPageComponent } from '../help-page/help-page.component';
-import { ChangePasswordComponent } from '../change-password/change-password.component';
-import { HomeComponent } from '../home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AboutComponent } from './components/about/about.component';
+import { HelpPageComponent } from './components/help-page/help-page.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './main.component';
-import { AuthGuard } from '@app/_helpers';
+import { AuthGuard } from '../../common/_helpers';
 
 const routes: Routes = [
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
       {
         path: 'users',
         loadChildren: () =>
-          import('../../users/users.module').then((m) => m.UsersModule),
+          import('../users/users.module').then((m) => m.UsersModule),
         canActivate: [AuthGuard],
         title: 'Users',
       },

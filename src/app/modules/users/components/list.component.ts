@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit, signal } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from '@app/_services';
+import { AccountService, AlertService } from '../../../common/_services';
 
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {

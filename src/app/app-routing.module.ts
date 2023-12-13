@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from './_helpers';
+import { AuthGuard } from './common/_helpers';
 const accountModule = () =>
-  import('./account/account.module').then((x) => x.AccountModule);
+  import('./modules/account/account.module').then((x) => x.AccountModule);
 const routes: Routes = [
   {
     path: '',
