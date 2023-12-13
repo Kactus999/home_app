@@ -6,7 +6,6 @@ import { AccountService, AlertService } from '@app/_services';
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
   users?: any[];
-
   constructor(
     private accountService: AccountService,
     private alertService: AlertService
@@ -25,7 +24,14 @@ export class ListComponent implements OnInit {
     this.accountService
       .delete(id)
       .pipe(first())
-      .subscribe(() => (this.users = this.users!.filter((x) => x.id !== id)));
-    this.alertService.error('Delete successful');
+      .subscribe({
+        next: () => {
+          this.users = this.users!.filter((x) => x.id !== id);
+          this.alertService.success('Delete successful');
+        },
+        error: (error) => {
+          this.alertService.error(error);
+        },
+      });
   }
 }
