@@ -22,10 +22,10 @@ import { SidebarComponent } from './modules/sidebar/sidebar.component';
   ],
   declarations: [
     AppComponent,
-    // AlertComponent,
     HomeComponent,
     MainComponent,
     SidebarComponent,
+    AlertComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

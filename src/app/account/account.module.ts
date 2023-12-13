@@ -14,7 +14,7 @@ import { AlertComponent } from '@app/_components';
     LayoutComponent,
     LoginComponent,
     RegisterComponent,
-    AlertComponent,
+    // AlertComponent,
   ],
 })
 export class AccountModule {}
