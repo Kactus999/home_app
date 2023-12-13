@@ -14,7 +14,7 @@ export class AlertComponent implements OnInit, OnDestroy {
   alertSubscription!: Subscription;
   routeSubscription!: Subscription;
 
-  constructor(private router: Router, private alertService: AlertService) {}
+  constructor(public router: Router, private alertService: AlertService) {}
 
   ngOnInit() {
     // subscribe to new alert notifications
@@ -35,9 +35,7 @@ export class AlertComponent implements OnInit, OnDestroy {
         this.alerts.push(alert);
 
         // auto close alert if required
-        if (alert.autoClose) {
-          setTimeout(() => this.removeAlert(alert), 3000);
-        }
+        setTimeout(() => this.removeAlert(alert), 2000);
       });
 
     // clear alerts on location change

@@ -1,8 +1,24 @@
-﻿<!-- <div *ngFor="let alert of alerts" class="{{ cssClass(alert) }}">
-  <span [innerHTML]="alert.message"></span>
-  <button class="btn-close" (click)="removeAlert(alert)" type="button"></button>
-</div> -->
-
-<div *ngFor="let alert of alerts" class="text-danger">
-  <p>Username or password is incorrect</p>
+﻿<div
+  *ngIf="!router.isActive('/account', false)"
+  class="position-fixed bottom-0 end-0 w-20 p-3"
+>
+  <div *ngFor="let alert of alerts" class="{{ cssClass(alert) }}">
+    <span [innerHTML]="alert.message"></span>
+    <button
+      class="btn-close"
+      (click)="removeAlert(alert)"
+      type="button"
+    ></button>
+  </div>
 </div>
+
+<!-- <div *ngIf="router.isActive('/account', false)">
+  <div *ngFor="let alert of alerts">
+    <p
+      style="position: absolute; width: 10vh; height: 10vh"
+      class="text-danger"
+    >
+      sdasd
+    </p>
+  </div>
+</div> -->

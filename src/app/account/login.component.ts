@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   loading = false;
   submitted = false;
+  wrongPassword = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,11 +53,13 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           // get return url from query parameters or default to home page
+          this.wrongPassword = false;
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
           this.router.navigateByUrl(returnUrl);
         },
         error: (error) => {
-          this.alertService.error(error);
+          this.wrongPassword = true;
+          // this.alertService.error(error);
           this.loading = false;
         },
       });

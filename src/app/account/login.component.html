@@ -56,9 +56,12 @@
         >
       </p>
     </div>
-    <div>
+    <!-- <div>
       <alert></alert>
-    </div>
+    </div> -->
+    <p class="text-danger" *ngIf="wrongPassword">
+      Username or password is wrong
+    </p>
     <form class="user-login" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="row py-3">
         <div class="col-md-12 roundedTextBox mb-3">
